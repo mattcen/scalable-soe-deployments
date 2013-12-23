@@ -1,0 +1,81 @@
+========================
+Scalable SOE deployments
+========================
+
+Who am I?
+=========
+
+* Matthew Cengia <mattcen@gmail.com>, @mattcen
+* Systems Administrator at Cyber IT Solutions
+* Working on PrisonPC (http://prisonpc.com)
+
+What is PrisonPC?
+=================
+
+A system designed to allow prisoners limited and monitored access PCs
+and the Internet.
+
+For the purposes of this presentation, the only importance of
+PrisonPC is that it makes use of a system we call Trimclient.
+
+What is Trimclient?
+===================
+
+Basically a network-bootable OS which runs all apps on the local
+machine to reduce server load.
+
+How does network booting work?
+==============================
+
+#. Desktop starts booting
+#. BIOS tries to boot off network card's PXE (Pre-installation
+   Execution Environment) ROM
+#. PXE ROM requests DHCP
+#. DHCP server sends IP, netmask, TFTP server, and TFTP boot file path
+   (pxelinux.0, in our case)
+#. PXE ROM retrieves and runs boot file
+#. pxelinux.0 attempts to retrieve boot config file based on this
+   desktop's MAC address, followed by individual parts of its IP
+   address (**FIXME**)
+   *Remember this*
+#. pxelinux.0 uses retrieved config file to possibly display a menu and
+   ultimately retrieve a kernel and initial RAM disk via TFTP, which it
+   then loads
+#. Kernel loads initrd, which then takes over and hands off to
+   live-boot.
+
+What does live-boot do?
+=======================
+
+**FIXME** Lots of stuff
+
+Trimclient Admin (TCA)
+======================
+
+* In-house set of scripts
+* Keeps 3 tables:
+  * Images (SOEs): A list of SOEs available for booting
+  * Realms: A group of PCs. E.g: "classroom 1", "cells", and the SOE
+    each group should boot
+  * Hosts: Individual desktop PCs, with its MAC, IP/netmask, and realm
+
+** UP TO HERE **
+
+..  This comment provides hints for editors about what kind of file
+    this is, and conventions to adhere to when editing it.  The page break
+    (^L) above helps Emacs quickly locate this metadata.
+
+    The Emacs major mode is set twice so that if rst.el (a non-standard
+    library) isn't installed, Emacs will fall back on text mode instead
+    of fundamental mode.
+
+    Local Variables:
+    mode: text
+    mode: rst
+    coding: utf-8
+    indent-tabs-mode: nil
+    fill-column: 70
+    tab-width: 2
+    End:
+
+    vim: ft=rst fenc=utf-8 sts=2 sw=2 ts=2 tw=70 et :
