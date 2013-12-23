@@ -24,6 +24,23 @@ What is Trimclient?
 Basically a network-bootable OS which runs all apps on the local
 machine to reduce server load.
 
+Trimclient history
+===============
+
+* Knoppix live boot CD
+  * live environment
+  * read-only root fileststem
+  * union with COW
+* SafeIC (safe internet computer)
+
+Use cases
+========
+
+* any large desktop deployment
+* prisons
+* schools
+* offices
+
 How does network booting work?
 ==============================
 
