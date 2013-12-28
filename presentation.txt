@@ -102,7 +102,9 @@ Trimclient Admin (TCA)
   * Realms: A group of PCs. E.g: "classroom 1", "cells", and the SOE
     each group should boot
   * Hosts: Individual desktop PCs, with its MAC, IP/netmask, and realm
-* 
+* Allows for trivial grouping of hosts in realms and immediate re-assignment of
+  realms to new SOEs. Upgrades then only require a reboot of each
+  desktop, and can be tested thoroughly beforehand.
 
 ..  This comment provides hints for editors about what kind of file
     this is, and conventions to adhere to when editing it.  The page break
