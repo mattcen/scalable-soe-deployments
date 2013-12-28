@@ -15,12 +15,10 @@ Realtek PCIe FE Family Controller Series v1.34 (10/07/13)
 
 EOF
 
-read -n1
-
 echo 'CLIENT MAC ADDR: 00 E0 4C 94 22 EF  GUID: 00020003-0004-0005-0006-0007-0008-0009'
 printf DHCP.
 
-for (( interval=0; ; interval++ ))
+for (( interval=0; interval<=3; interval++ ))
 do
   printf .
   for i in / - \\ \| / - \\ \| / - \\ \| / - \\ \| .
@@ -28,9 +26,7 @@ do
     sleep 0.1
     printf '\b%s' "$i"
   done
-done 2>/dev/null &
-read -n1
-kill $! >/dev/null 2>&1
+done
 printf '\r'
 
 while read -r line
@@ -57,18 +53,14 @@ Trying to load: pxelinux.cfg/00020003-0004-0005-0006-0007-0008-0009
 Trying to load: pxelinux.cfg/01-00-e0-4c-94-22-ef
 EOF
 
-read -n1
-
 while read -r line
 do
   printf '%s' "$line"
-  while :
+  for i in {1..50}
   do
     sleep 0.01
     printf .
-  done &
-  read -n1
-  kill $!
+  done
   printf '\n'
 done <<EOF
 Loading images/demo-mattcen/vmlinuz
