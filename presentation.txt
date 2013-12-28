@@ -5,7 +5,7 @@ Scalable SOE deployments
 Who am I?
 =========
 
-* Matthew Cengia <mattcen@gmail.com>, @mattcen
+* Matthew Cengia <mattcen@gmail.com>, @mattcen on Twitter
 * Systems Administrator at Cyber IT Solutions (http://www.cyber.com.au)
 * Working on PrisonPC (http://www.prisonpc.com)
 
@@ -52,9 +52,22 @@ How does network booting work?
    (pxelinux.0, in our case)
 #. PXE ROM retrieves and runs boot file
 #. pxelinux.0 attempts to retrieve boot config file based on this
-   desktop's MAC address, followed by individual parts of its IP
-   address (**FIXME**)
-   *Remember this*
+   desktop's MAC address, followed by individual nibbles (4 bits, or
+   1 hex digit) of its IP address, starting with the whole IP, then
+   repeatedly stripping nibbles off the end::
+
+     pxelinux.cfg/00020003-0004-0005-0006-0007-0008-0009
+     pxelinux.cfg/01-88-99-aa-bb-cc-dd
+     pxelinux.cfg/C000025B
+     pxelinux.cfg/C000025
+     pxelinux.cfg/C00002
+     pxelinux.cfg/C0000
+     pxelinux.cfg/C000
+     pxelinux.cfg/C00
+     pxelinux.cfg/C0
+     pxelinux.cfg/C
+     pxelinux.cfg/default
+
 #. pxelinux.0 uses retrieved config file to possibly display a menu and
    ultimately retrieve a kernel and initial RAM disk via TFTP, which it
    then loads
