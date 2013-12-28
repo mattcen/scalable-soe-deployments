@@ -6,8 +6,8 @@ Who am I?
 =========
 
 * Matthew Cengia <mattcen@gmail.com>, @mattcen
-* Systems Administrator at Cyber IT Solutions
-* Working on PrisonPC (http://prisonpc.com)
+* Systems Administrator at Cyber IT Solutions (http://www.cyber.com.au)
+* Working on PrisonPC (http://www.prisonpc.com)
 
 What is PrisonPC?
 =================
@@ -21,8 +21,8 @@ PrisonPC is that it makes use of a system we call Trimclient.
 What is Trimclient?
 ===================
 
-Basically a network-bootable OS which runs all apps on the local
-machine to reduce server load.
+A solution to create network-bootable OSes which run all apps on the
+local machine to reduce server load.
 
 Trimclient history
 ===============
@@ -36,10 +36,10 @@ Trimclient history
 Use cases
 ========
 
-* any large desktop deployment
-* prisons
-* schools
-* offices
+* Any large-ish desktop deployment:
+  * Prisons
+  * Schools
+  * Offices
 
 How does network booting work?
 ==============================
@@ -59,12 +59,39 @@ How does network booting work?
    ultimately retrieve a kernel and initial RAM disk via TFTP, which it
    then loads
 #. Kernel loads initrd, which then takes over and hands off to
-   live-boot.
+   live-boot
+
+Building SOEs
+=============
+
+Old method: Transmute
+---------------------
+
+* Nasty scheme shell scripts
+* Used Ubuntu 10.04 Live Desktop ISO
+* Uninstalled basically everything
+* Installed just what we wanted and performed scripted configuration
+* Booted via Casper (Ubuntu's live boot solution)
+
+New method: Bootstrap
+---------------------
+
+* Relatively short (and therefore monolithic) Bash script
+* Performs base installation via debootstrap
+* Installs other required packages and performs scripted configuration
+* Boots via live-boot (Debian's live boot solution)
 
 What does live-boot do?
 =======================
 
-**FIXME** Lots of stuff
+(in a nutshell)
+
+* Find and mount root filesystem, in our case exposed as a squashfs or
+  standard directory over NFS
+* Set up a COW (copy-on-write) filesystem on top so temporary changes
+  can be made. Currently uses AUFS
+* Pivot root and start /sbin/init from new root
+* Can do other stuff that is out of scope
 
 Trimclient Admin (TCA)
 ======================
@@ -75,8 +102,7 @@ Trimclient Admin (TCA)
   * Realms: A group of PCs. E.g: "classroom 1", "cells", and the SOE
     each group should boot
   * Hosts: Individual desktop PCs, with its MAC, IP/netmask, and realm
-
-** UP TO HERE **
+* 
 
 ..  This comment provides hints for editors about what kind of file
     this is, and conventions to adhere to when editing it.  The page break
