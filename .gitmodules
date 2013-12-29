@@ -1,6 +1,8 @@
 [submodule "impress.js"]
 	path = impress.js
 	url = https://github.com/bartaz/impress.js.git
+	url = home:Downloads/src/impress.js.git
 [submodule "impress-console"]
 	path = impress-console
 	url = https://github.com/regebro/impress-console.git
+	url = home:Downloads/src/impress-console.git
