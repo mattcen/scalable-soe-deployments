@@ -25,7 +25,7 @@ A solution to create network-bootable OSes which run all apps on the
 local machine to reduce server load.
 
 Trimclient history
-===============
+==================
 
 * Knoppix live boot CD
   * live environment
@@ -34,7 +34,7 @@ Trimclient history
 * SafeIC (safe internet computer)
 
 Use cases
-========
+=========
 
 * Any large-ish desktop deployment:
   * Prisons
