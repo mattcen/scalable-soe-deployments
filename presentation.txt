@@ -32,9 +32,11 @@ Trimclient history
   * read-only root fileststem
   * union with COW
 * SafeIC (safe internet computer)
+* TCA and Transmuste
+* TCA and bootstrap
 
-Use cases
-=========
+Trimclient use-cases
+====================
 
 * Any large-ish desktop deployment:
   * Prisons
@@ -89,7 +91,7 @@ Old method: Transmute
 New method: Bootstrap
 ---------------------
 
-* Relatively short (and therefore monolithic) Bash script
+* Relatively short Bash script
 * Performs base installation via debootstrap
 * Installs other required packages and performs scripted configuration
 * Boots via live-boot (Debian's live boot solution)
@@ -104,7 +106,7 @@ What does live-boot do?
 * Set up a COW (copy-on-write) filesystem on top so temporary changes
   can be made. Currently uses AUFS
 * Pivot root and start /sbin/init from new root
-* Can do other stuff that is out of scope
+* Other stuff (out of scope)
 
 Trimclient Admin (TCA)
 ======================
@@ -112,9 +114,12 @@ Trimclient Admin (TCA)
 * In-house set of scripts
 * Keeps 3 tables:
   * Images (SOEs): A list of SOEs available for booting
+
   * Realms: A group of PCs. E.g: "classroom 1", "cells", and the SOE
     each group should boot
+
   * Hosts: Individual desktop PCs, with its MAC, IP/netmask, and realm
+
 * Allows for trivial grouping of hosts in realms and immediate re-assignment of
   realms to new SOEs. Upgrades then only require a reboot of each
   desktop, and can be tested thoroughly beforehand.
