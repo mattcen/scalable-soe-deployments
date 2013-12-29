@@ -1,147 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Scalable SOE deployments</title>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <meta name="description" content="Scalable SOE deployments" />
-    <meta name="author" content="Matthew Cengia" />
-
-    <!--link
+  <title>Scalable SOE deployments</title>
+  <meta name="description" content="Scalable SOE deployments">
+  <meta name="author" content="Matthew Cengia"><!--link
     href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
     rel="stylesheet" /-->
 
-    <style>.notes {/*display: none*/; color: red;}</style>
+  <style type="text/css">
+.notes {/*display: none*/; color: red;}
+  </style>
+  <!--link href="css/impress-demo.css" rel="stylesheet" /-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
 
-    <!--link href="css/impress-demo.css" rel="stylesheet" /-->
+<body class="impress-not-supported">
+  <div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by
+    impress.js, so you are presented with a simplified version of
+    this presentation.</p>
 
+    <p>For the best experience please use the latest <b>Chrome</b>,
+    <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
 
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  </head>
+  <div id="impress">
+    <div id="start" class="step slide" data-x="0" data-y="-1500">
+      <div class="notes">
+        00:30
+      </div>
 
-  <body class="impress-not-supported">
+      <h1>Who am I?</h1>
 
-    <div class="fallback-message">
-      <p>
-      Your browser <b>doesn't support the features required</b> by
-      impress.js, so you are presented with a simplified version of this
-      presentation.
-      </p>
-      <p>For the best experience please use the latest <b>Chrome</b>,
-      <b>Safari</b> or <b>Firefox</b> browser.</p>
+      <ul>
+        <li>Matthew Cengia &lt;mattcen@gmail.com&gt;, <a href=
+        "https://www.twitter.com/mattcen">@mattcen</a> on Twitter
+        and elsewhere</li>
+
+        <li>Systems Administrator at <a href=
+        "http://www.cyber.com.au">Cyber IT Solutions
+        (http://www.cyber.com.au)</a></li>
+
+        <li>Working on <a href="http://www.prisonpc.com">PrisonPC
+        (http://www.prisonpc.com)</a></li>
+      </ul>
     </div>
 
-    <div id="impress">
-
-      <div id="start" class="step slide" data-x="0" data-y="-1500">
-        <div class="notes">
-          00:30
-        </div>
-        <h1>Who am I?</h1>
-        <ul>
-          <li>
-          Matthew Cengia &lt;mattcen@gmail.com&gt;, <a
-            href="https://www.twitter.com/mattcen">@mattcen</a> on
-          Twitter and elsewhere
-          </li>
-          <li>
-          Systems Administrator at <a
-            href="http://www.cyber.com.au">Cyber IT Solutions
-            (http://www.cyber.com.au)</a>
-          </li>
-          <li>
-          Working on <a href="http://www.prisonpc.com">PrisonPC
-            (http://www.prisonpc.com)</a>
-          </li>
-        </ul>
+    <div class="step slide" data-x="1000" data-y="-1500">
+      <div class="notes">
+        <p>01:00<br>
+        <br>
+        A system designed to allow prisoners limited and monitored
+        access PCs and the Internet.<br>
+        <br>
+        For the purposes of this presentation, the only importance
+        of PrisonPC is that it makes use of a system we call
+        Trimclient.<br></p>
       </div>
 
-      <div class="step slide" data-x="1000" data-y="-1500">
-        <div class="notes">
-          <p>
-          01:00<br/>
-          <br/>
-          A system designed to allow prisoners limited and monitored
-          access PCs and the Internet.<br/>
-          <br/>
-          For the purposes of this presentation, the only importance of
-          PrisonPC is that it makes use of a system we call
-          Trimclient.<br/>
-          </p>
-        </div>
-        <h1>What is PrisonPC?</h1>
+      <h1>What is PrisonPC?</h1>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="-1500">
+      <div class="notes">
+        <p>01:30<br>
+        <br>
+        A solution to create network-bootable OSes which run all
+        apps on the local machine to reduce server load.</p>
       </div>
 
-      <div class="step slide" data-x="2000" data-y="-1500">
-        <div class="notes">
-          <p>
-          01:30<br/>
-          <br/>
-          A solution to create network-bootable OSes which run all apps on
-          the local machine to reduce server load.
-          </p>
-        </div>
-        <h1>What is Trimclient?</h1>
+      <h1>What is Trimclient?</h1>
+    </div>
+
+    <div class="step slide" data-x="3000" data-y="-1500">
+      <div class="notes">
+        <p>02:00</p>
       </div>
 
-      <div class="step slide" data-x="3000" data-y="-1500">
-        <div class="notes">
-          <p>
-          02:00
-          </p>
-        </div>
-        <h1>Trimclient history</h1>
-        <ul>
-          <li>Knoppix live boot CD</li>
+      <h1>Trimclient history</h1>
+
+      <ul>
+        <li>Knoppix live boot CD</li>
+
+        <li style="list-style: none; display: inline">
           <ul>
             <li>live environment</li>
+
             <li>read-only root fileststem</li>
+
             <li>union with COW</li>
           </ul>
-          <li>SafeIC (safe internet computer)</li>
-          <li>TCA and Transmuste</li>
-          <li>TCA and bootstrap</li>
-        </ul>
+        </li>
+
+        <li>SafeIC (safe internet computer)</li>
+
+        <li>TCA and Transmuste</li>
+
+        <li>TCA and bootstrap</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500">
+      <div class="notes">
+        <p>02:15</p>
       </div>
 
-      <div class="step slide" data-x="4000" data-y="-1500">
-        <div class="notes">
-          <p>
-          02:15
-          </p>
-        </div>
-        <h1>Trimclient use-cases</h1>
-        <p>
-        Any large-ish desktop deployment:
-        </p>
-        <ul>
-          <li>Prisons</li>
-          <li>Schools</li>
-          <li>Offices</li>
-        </ul>
-      </div>
+      <h1>Trimclient use-cases</h1>
 
-      <div class="step slide" data-x="5000" data-y="-1500">
-        <div class="notes">
-          <p>
-          3:30
-          </p>
+      <p>Any large-ish desktop deployment:</p>
+
+      <ul>
+        <li>Prisons</li>
+
+        <li>Schools</li>
+
+        <li>Offices</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="-1500">
+      <div class="notes">
+        <p>3:30</p>
+
         <ol>
           <li>Desktop starts booting</li>
+
           <li>BIOS tries to boot off network card's PXE
           (Pre-installation Execution Environment) ROM</li>
+
           <li>PXE ROM requests DHCP</li>
-          <li>DHCP server sends IP, netmask, TFTP server, and TFTP boot
-          file path (pxelinux.0, in our case)</li>
+
+          <li>DHCP server sends IP, netmask, TFTP server, and TFTP
+          boot file path (pxelinux.0, in our case)</li>
+
           <li>PXE ROM retrieves and runs boot file</li>
-          <li>pxelinux.0 attempts to retrieve boot config file based on
-          this desktop's MAC address, followed by individual nibbles (4
-          bits, or 1 hex digit) of its IP address, starting with the
-          whole IP, then repeatedly stripping nibbles off the end:<br/>
-          <pre class="literal-block">
+
+          <li>pxelinux.0 attempts to retrieve boot config file
+          based on this desktop's MAC address, followed by
+          individual nibbles (4 bits, or 1 hex digit) of its IP
+          address, starting with the whole IP, then repeatedly
+          stripping nibbles off the end:<br>
+            <pre class="literal-block">
 pxelinux.cfg/00020003-0004-0005-0006-0007-0008-0009
 pxelinux.cfg/01-88-99-aa-bb-cc-dd
 pxelinux.cfg/C000025B
@@ -153,113 +160,130 @@ pxelinux.cfg/C00
 pxelinux.cfg/C0
 pxelinux.cfg/C
 pxelinux.cfg/default
-</pre></li>
-          <li>pxelinux.0 uses retrieved config file to possibly display
-          a menu and ultimately retrieve a kernel and initial RAM disk
-          via TFTP, which it then loads</li>
-          <li>Kernel loads initrd, which then takes over and hands off
-          to live-boot</li>
-        </ol>
-        </div>
-        <h1>How does network booting work?</h1>
-      </div>
-
-      <div class="step slide" data-x="6000" data-y="-1500">
-        <div class="notes">
-          04:00
-        </div>
-        <h1>Building SOEs</h1>
-        <h2>Old method: Transmute</h2>
-        <ul>
-          <li>Nasty scheme shell scripts</li>
-          <li>Used Ubuntu 10.04 Live Desktop ISO</li>
-          <li>Uninstalled basically everything</li>
-          <li>Installed just what we wanted and performed scripted
-          configuration</li>
-          <li>Booted via Casper (Ubuntu's live boot solution)</li>
-        </ul>
-      </div>
-
-      <div class="step slide" data-x="7000" data-y="-1500">
-        <div class="notes">
-          04:30
-        </div>
-        <h1>Building SOEs</h1>
-        <h2>New method: Bootstrap</h2>
-        <ul>
-          <li>Relatively short Bash script</li>
-          <li>Performs base installation via debootstrap</li>
-          <li>Installs other required packages and performs scripted
-          configuration</li>
-          <li>Boots via live-boot (Debian's live boot solution)</li>
-        </ul>
-      </div>
-
-      <div class="step slide" data-x="8000" data-y="-1500">
-        <div class="notes">
-        </div>
-        <h1>What does live-boot do?</h1>
-        <p>(in a nutshell)</p>
-        <ul>
-          <li>Find and mount root filesystem, in our case exposed as a
-          squashfs or standard directory over NFS</li>
-          <li>Set up a COW (copy-on-write) filesystem on top so
-          temporary changes can be made. Currently uses AUFS</li>
-          <li>Pivot root and start /sbin/init from new root</li>
-          <li>Other stuff (out of scope)</li>
-        </ul>
-      </div>
-
-      <div class="step slide" data-x="9000" data-y="-1500">
-        <div class="notes">
-          <p>
-          </p>
-        </div>
-        <h1>Trimclient Admin (TCA)</h1>
-        <ul>
-          <li>In-house set of scripts</li>
-          <li>Keeps 3 tables: * Images (SOEs): A list of SOEs available
-          for booting<br/>
-            <ul>
-              <li>Realms: A group of PCs. E.g: "classroom 1", "cells",
-              and the SOE each group should boot</li>
-              <li>Hosts: Individual desktop PCs, with its MAC,
-              IP/netmask, and realm</li>
-            </ul>
+</pre>
           </li>
-          <li>Allows for trivial grouping of hosts in realms and
-          immediate re-assignment of realms to new SOEs. Upgrades then
-          only require a reboot of each desktop, and can be tested
-          thoroughly beforehand.</li>
-        </ul>
+
+          <li>pxelinux.0 uses retrieved config file to possibly
+          display a menu and ultimately retrieve a kernel and
+          initial RAM disk via TFTP, which it then loads</li>
+
+          <li>Kernel loads initrd, which then takes over and hands
+          off to live-boot</li>
+        </ol>
       </div>
 
-      <div class="step slide" data-x="10000" data-y="-1500">
-        <div class="notes">
-          <p>
-          </p>
-        </div>
+      <h1>How does network booting work?</h1>
+    </div>
+
+    <div class="step slide" data-x="6000" data-y="-1500">
+      <div class="notes">
+        04:00
       </div>
 
+      <h1>Building SOEs</h1>
+
+      <h2>Old method: Transmute</h2>
+
+      <ul>
+        <li>Nasty scheme shell scripts</li>
+
+        <li>Used Ubuntu 10.04 Live Desktop ISO</li>
+
+        <li>Uninstalled basically everything</li>
+
+        <li>Installed just what we wanted and performed scripted
+        configuration</li>
+
+        <li>Booted via Casper (Ubuntu's live boot solution)</li>
+      </ul>
     </div>
 
-    <div class="hint">
-      <p>Use a spacebar or arrow keys to navigate</p>
+    <div class="step slide" data-x="7000" data-y="-1500">
+      <div class="notes">
+        04:30
+      </div>
+
+      <h1>Building SOEs</h1>
+
+      <h2>New method: Bootstrap</h2>
+
+      <ul>
+        <li>Relatively short Bash script</li>
+
+        <li>Performs base installation via debootstrap</li>
+
+        <li>Installs other required packages and performs scripted
+        configuration</li>
+
+        <li>Boots via live-boot (Debian's live boot solution)</li>
+      </ul>
     </div>
-    <script>
-      if ("ontouchstart" in document.documentElement)
+
+    <div class="step slide" data-x="8000" data-y="-1500">
+      <div class="notes"></div>
+
+      <h1>What does live-boot do?</h1>
+
+      <p>(in a nutshell)</p>
+
+      <ul>
+        <li>Find and mount root filesystem, in our case exposed as
+        a squashfs or standard directory over NFS</li>
+
+        <li>Set up a COW (copy-on-write) filesystem on top so
+        temporary changes can be made. Currently uses AUFS</li>
+
+        <li>Pivot root and start /sbin/init from new root</li>
+
+        <li>Other stuff (out of scope)</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="9000" data-y="-1500">
+      <div class="notes"></div>
+
+      <h1>Trimclient Admin (TCA)</h1>
+
+      <ul>
+        <li>In-house set of scripts</li>
+
+        <li>Keeps 3 tables: * Images (SOEs): A list of SOEs
+        available for booting<br>
+
+          <ul>
+            <li>Realms: A group of PCs. E.g: "classroom 1",
+            "cells", and the SOE each group should boot</li>
+
+            <li>Hosts: Individual desktop PCs, with its MAC,
+            IP/netmask, and realm</li>
+          </ul>
+        </li>
+
+        <li>Allows for trivial grouping of hosts in realms and
+        immediate re-assignment of realms to new SOEs. Upgrades
+        then only require a reboot of each desktop, and can be
+        tested thoroughly beforehand.</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="10000" data-y="-1500">
+      <div class="notes"></div>
+    </div>
+  </div>
+
+  <div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+  </div><script type="text/javascript">
+if ("ontouchstart" in document.documentElement)
       {
-        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate<\/p>";
       }
-    </script>
-
-    <script src="js/impress.js"></script>
-    <script src="js/impressConsole.js"></script>
-    <script>
-      impress().init();
-      impressConsole().init();
-      impressConsole().open();
-    </script>
-
-  </body>
+  </script><script src="js/impress.js" type="text/javascript">
+</script><script src="js/impressConsole.js" type="text/javascript">
+</script><script type="text/javascript">
+impress().init();
+  impressConsole().init();
+  impressConsole().open();
+  </script>
+</body>
 </html>
