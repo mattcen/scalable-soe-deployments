@@ -34,10 +34,6 @@
 
   <div id="impress">
     <div id="start" class="step slide" data-x="0" data-y="-1500">
-      <div class="notes">
-        00:30
-      </div>
-
       <h1>Who am I?</h1>
 
       <ul>
@@ -52,12 +48,16 @@
         <li>Working on <a href="http://www.prisonpc.com">PrisonPC
         (http://www.prisonpc.com)</a></li>
       </ul>
+      <div class="notes">
+        <p>Timing: 00:30</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
+      <h1>What is PrisonPC?</h1>
+
       <div class="notes">
-        <p>01:00<br>
-        <br>
+        <p>Timing: 01:00<br>
         A system designed to allow prisoners limited and monitored
         access PCs and the Internet.<br>
         <br>
@@ -65,26 +65,20 @@
         of PrisonPC is that it makes use of a system we call
         Trimclient.<br></p>
       </div>
-
-      <h1>What is PrisonPC?</h1>
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
+      <h1>What is Trimclient?</h1>
+
       <div class="notes">
-        <p>01:30<br>
+        <p>Timing: 01:30<br>
         <br>
         A solution to create network-bootable OSes which run all
         apps on the local machine to reduce server load.</p>
       </div>
-
-      <h1>What is Trimclient?</h1>
     </div>
 
     <div class="step slide" data-x="3000" data-y="-1500">
-      <div class="notes">
-        <p>02:00</p>
-      </div>
-
       <h1>Trimclient history</h1>
 
       <ul>
@@ -106,13 +100,13 @@
 
         <li>TCA and bootstrap</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 02:00</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="4000" data-y="-1500">
-      <div class="notes">
-        <p>02:15</p>
-      </div>
-
       <h1>Trimclient use-cases</h1>
 
       <p>Any large-ish desktop deployment:</p>
@@ -124,11 +118,17 @@
 
         <li>Offices</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 02:15</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="5000" data-y="-1500">
+      <h1>How does network booting work?</h1>
+
       <div class="notes">
-        <p>3:30</p>
+        <p>Timing: 3:30</p>
 
         <ol>
           <li>Desktop starts booting</li>
@@ -171,15 +171,9 @@ pxelinux.cfg/default
           off to live-boot</li>
         </ol>
       </div>
-
-      <h1>How does network booting work?</h1>
     </div>
 
     <div class="step slide" data-x="6000" data-y="-1500">
-      <div class="notes">
-        04:00
-      </div>
-
       <h1>Building SOEs</h1>
 
       <h2>Old method: Transmute</h2>
@@ -196,13 +190,13 @@ pxelinux.cfg/default
 
         <li>Booted via Casper (Ubuntu's live boot solution)</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 04:00</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="7000" data-y="-1500">
-      <div class="notes">
-        04:30
-      </div>
-
       <h1>Building SOEs</h1>
 
       <h2>New method: Bootstrap</h2>
@@ -217,11 +211,13 @@ pxelinux.cfg/default
 
         <li>Boots via live-boot (Debian's live boot solution)</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 04:30</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="8000" data-y="-1500">
-      <div class="notes"></div>
-
       <h1>What does live-boot do?</h1>
 
       <p>(in a nutshell)</p>
@@ -237,20 +233,24 @@ pxelinux.cfg/default
 
         <li>Other stuff (out of scope)</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 06:00</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="9000" data-y="-1500">
-      <div class="notes"></div>
-
       <h1>Trimclient Admin (TCA)</h1>
 
       <ul>
         <li>In-house set of scripts</li>
 
-        <li>Keeps 3 tables: * Images (SOEs): A list of SOEs
-        available for booting<br>
+        <li>Keeps 3 tables:
 
           <ul>
+            <li>Images (SOEs): A list of SOEs available for
+            booting</li>
+
             <li>Realms: A group of PCs. E.g: "classroom 1",
             "cells", and the SOE each group should boot</li>
 
@@ -264,10 +264,16 @@ pxelinux.cfg/default
         then only require a reboot of each desktop, and can be
         tested thoroughly beforehand.</li>
       </ul>
+
+      <div class="notes">
+        <p>Timing: 08:00</p>
+      </div>
     </div>
 
     <div class="step slide" data-x="10000" data-y="-1500">
-      <div class="notes"></div>
+      <div class="notes">
+        <p>Insert notes here</p>
+      </div>
     </div>
   </div>
 
