@@ -5,7 +5,8 @@ Scalable SOE deployments
 Who am I?
 =========
 
-* Matthew Cengia <mattcen@gmail.com>, @mattcen on Twitter
+* Matthew Cengia <mattcen@gmail.com>, @mattcen on Twitter and
+  elsewhere
 * Systems Administrator at Cyber IT Solutions (http://www.cyber.com.au)
 * Working on PrisonPC (http://www.prisonpc.com)
 
