@@ -124,7 +124,7 @@ a:focus {
     white-space: nowrap;
 }
 
-#overview { display: none }
+#overview { display: block; z-index: -1; height: 300px; width: 1450px; }
 
 .impress-on-overview .step {
     opacity: 1;
