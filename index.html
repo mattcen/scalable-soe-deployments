@@ -15,9 +15,10 @@
     rel="stylesheet" /-->
 
   <style type="text/css">
-.notes {/*display: none*/; color: red;}
+.notes {display: none; /*color: red;*/}
+pre { font-size: 50%; line-height: 1;}
   </style>
-  <!--link href="css/impress-demo.css" rel="stylesheet" /-->
+  <link href="css/impress-demo.css" rel="stylesheet" />
   <link rel="shortcut icon" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -55,26 +56,24 @@
 
     <div class="step slide" data-x="1000" data-y="-1500">
       <h1>What is PrisonPC?</h1>
-
-      <div class="notes">
-        <p>Timing: 01:00<br>
-        A system designed to allow prisoners limited and monitored
+        <p>A system designed to allow prisoners limited and monitored
         access PCs and the Internet.<br>
         <br>
         For the purposes of this presentation, the only importance
         of PrisonPC is that it makes use of a system we call
         Trimclient.<br></p>
+      <div class="notes">
+        <p>Timing: 01:00</p>
       </div>
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
       <h1>What is Trimclient?</h1>
 
-      <div class="notes">
-        <p>Timing: 01:30<br>
-        <br>
-        A solution to create network-bootable OSes which run all
+        <p>A solution to create network-bootable OSes which run all
         apps on the local machine to reduce server load.</p>
+      <div class="notes">
+        <p>Timing: 01:30</p>
       </div>
     </div>
 
@@ -127,9 +126,6 @@
     <div class="step slide" data-x="5000" data-y="-1500">
       <h1>How does network booting work?</h1>
 
-      <div class="notes">
-        <p>Timing: 3:30</p>
-
         <ol>
           <li>Desktop starts booting</li>
 
@@ -142,12 +138,18 @@
           boot file path (pxelinux.0, in our case)</li>
 
           <li>PXE ROM retrieves and runs boot file</li>
+        </ol>
+      <div class="notes">
+        <p>Timing: 3:00</p>
 
-          <li>pxelinux.0 attempts to retrieve boot config file
-          based on this desktop's MAC address, followed by
-          individual nibbles (4 bits, or 1 hex digit) of its IP
-          address, starting with the whole IP, then repeatedly
-          stripping nibbles off the end:<br>
+      </div>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="0">
+      <h1>How does network booting work?</h1>
+
+        <ol>
+          <li>pxelinux.0 attempts to retrieve boot config file<br>
             <pre class="literal-block">
 pxelinux.cfg/00020003-0004-0005-0006-0007-0008-0009
 pxelinux.cfg/01-88-99-aa-bb-cc-dd
@@ -170,6 +172,13 @@ pxelinux.cfg/default
           <li>Kernel loads initrd, which then takes over and hands
           off to live-boot</li>
         </ol>
+      <div class="notes">
+        <p>Timing: 3:30</p>
+          pxelinux.0 attempts to retrieve boot config file
+          based on this desktop's MAC address, followed by
+          individual nibbles (4 bits, or 1 hex digit) of its IP
+          address, starting with the whole IP, then repeatedly
+          stripping nibbles off the end
       </div>
     </div>
 
@@ -196,7 +205,7 @@ pxelinux.cfg/default
       </div>
     </div>
 
-    <div class="step slide" data-x="7000" data-y="-1500">
+    <div class="step slide" data-x="6000" data-y="0">
       <h1>Building SOEs</h1>
 
       <h2>New method: Bootstrap</h2>
@@ -217,7 +226,7 @@ pxelinux.cfg/default
       </div>
     </div>
 
-    <div class="step slide" data-x="8000" data-y="-1500">
+    <div class="step slide" data-x="7000" data-y="-1500">
       <h1>What does live-boot do?</h1>
 
       <p>(in a nutshell)</p>
@@ -239,7 +248,7 @@ pxelinux.cfg/default
       </div>
     </div>
 
-    <div class="step slide" data-x="9000" data-y="-1500">
+    <div class="step slide" data-x="8000" data-y="-1500">
       <h1>Trimclient Admin (TCA)</h1>
 
       <ul>
@@ -270,7 +279,7 @@ pxelinux.cfg/default
       </div>
     </div>
 
-    <div class="step slide" data-x="10000" data-y="-1500">
+    <div class="step slide" data-x="9000" data-y="-1500">
       <div class="notes">
         <p>Insert notes here</p>
       </div>
