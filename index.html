@@ -13,9 +13,10 @@
   <meta name="author" content="Matthew Cengia">
   <style type="text/css">
 .notes {display: none; /*color: red;*/}
-pre { font-size: 50%; line-height: 1;}
+  pre { font-size: 50%; line-height: 1;}
   </style>
-  <link href="css/impress-demo.css" rel="stylesheet" />
+  <link href="css/impress-demo.css" rel="stylesheet" type=
+  "text/css">
   <link rel="shortcut icon" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -33,6 +34,7 @@ pre { font-size: 50%; line-height: 1;}
   <div id="impress">
     <div id="start" class="step slide" data-x="0" data-y="-1500">
       <h1>Scalable SOE deployments</h1>
+
       <h2>Who am I?</h2>
 
       <ul>
@@ -47,31 +49,38 @@ pre { font-size: 50%; line-height: 1;}
         <li>Working on <a href="http://www.prisonpc.com">PrisonPC
         (http://www.prisonpc.com)</a></li>
       </ul>
+
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 00:30</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 00:30</p>
       </div>
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
       <h1>What is PrisonPC?</h1>
-        <p>A system designed to allow prisoners limited and monitored
-        access PCs and the Internet.<br>
-        <br>
-        For the purposes of this presentation, the only importance
-        of PrisonPC is that it makes use of a system we call
-        Trimclient.<br></p>
+
+      <p>A system designed to allow prisoners limited and monitored
+      access PCs and the Internet.<br>
+      <br>
+      For the purposes of this presentation, the only importance of
+      PrisonPC is that it makes use of a system we call
+      Trimclient.<br></p>
+
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 01:00</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 01:00</p>
       </div>
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
       <h1>What is Trimclient?</h1>
 
-        <p>A solution to create network-bootable OSes which run all
-        apps on the local machine to reduce server load.</p>
+      <p>A solution to create network-bootable OSes which run all
+      apps on the local machine to reduce server load.</p>
+
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 01:30</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 01:30</p>
       </div>
     </div>
 
@@ -99,7 +108,8 @@ pre { font-size: 50%; line-height: 1;}
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 02:00</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 02:00</p>
       </div>
     </div>
 
@@ -117,38 +127,40 @@ pre { font-size: 50%; line-height: 1;}
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 02:15</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 02:15</p>
       </div>
     </div>
 
     <div class="step slide" data-x="5000" data-y="-1500">
       <h1>How does network booting work?</h1>
 
-        <ol>
-          <li>Desktop starts booting</li>
+      <ol>
+        <li>Desktop starts booting</li>
 
-          <li>BIOS tries to boot off network card's PXE
-          (Pre-installation Execution Environment) ROM</li>
+        <li>BIOS tries to boot off network card's PXE
+        (Pre-installation Execution Environment) ROM</li>
 
-          <li>PXE ROM requests DHCP</li>
+        <li>PXE ROM requests DHCP</li>
 
-          <li>DHCP server sends IP, netmask, TFTP server, and TFTP
-          boot file path (pxelinux.0, in our case)</li>
+        <li>DHCP server sends IP, netmask, TFTP server, and TFTP
+        boot file path (pxelinux.0, in our case)</li>
 
-          <li>PXE ROM retrieves and runs boot file</li>
-        </ol>
+        <li>PXE ROM retrieves and runs boot file</li>
+      </ol>
+
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 3:00</p>
-
+        <p>SLIDE NOTES:<br>
+        Timing: 3:00</p>
       </div>
     </div>
 
     <div class="step slide" data-x="5000" data-y="-700">
       <h1>How does network booting work?</h1>
 
-        <ol>
-          <li>pxelinux.0 attempts to retrieve boot config file<br>
-            <pre class="literal-block">
+      <ol>
+        <li>pxelinux.0 attempts to retrieve boot config file<br>
+          <pre class="literal-block">
 pxelinux.cfg/00020003-0004-0005-0006-0007-0008-0009
 pxelinux.cfg/01-88-99-aa-bb-cc-dd
 pxelinux.cfg/C000025B
@@ -161,22 +173,23 @@ pxelinux.cfg/C0
 pxelinux.cfg/C
 pxelinux.cfg/default
 </pre>
-          </li>
+        </li>
 
-          <li>pxelinux.0 uses retrieved config file to possibly
-          display a menu and ultimately retrieve a kernel and
-          initial RAM disk via TFTP, which it then loads</li>
+        <li>pxelinux.0 uses retrieved config file to possibly
+        display a menu and ultimately retrieve a kernel and initial
+        RAM disk via TFTP, which it then loads</li>
 
-          <li>Kernel loads initrd, which then takes over and hands
-          off to live-boot</li>
-        </ol>
+        <li>Kernel loads initrd, which then takes over and hands
+        off to live-boot</li>
+      </ol>
+
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 3:30</p>
-          pxelinux.0 attempts to retrieve boot config file
-          based on this desktop's MAC address, followed by
-          individual nibbles (4 bits, or 1 hex digit) of its IP
-          address, starting with the whole IP, then repeatedly
-          stripping nibbles off the end
+        <p>SLIDE NOTES:<br>
+        Timing: 3:30</p>pxelinux.0 attempts to retrieve boot config
+        file based on this desktop's MAC address, followed by
+        individual nibbles (4 bits, or 1 hex digit) of its IP
+        address, starting with the whole IP, then repeatedly
+        stripping nibbles off the end
       </div>
     </div>
 
@@ -199,7 +212,8 @@ pxelinux.cfg/default
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 04:00</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 04:00</p>
       </div>
     </div>
 
@@ -220,7 +234,8 @@ pxelinux.cfg/default
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 04:30</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 04:30</p>
       </div>
     </div>
 
@@ -242,7 +257,8 @@ pxelinux.cfg/default
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 06:00</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 06:00</p>
       </div>
     </div>
 
@@ -273,7 +289,8 @@ pxelinux.cfg/default
       </ul>
 
       <div class="notes">
-        <p>SLIDE NOTES:<br>Timing: 08:00</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 08:00</p>
       </div>
     </div>
 
@@ -283,8 +300,8 @@ pxelinux.cfg/default
       </div>
     </div>
 
-    <div id="overview" class="step" data-x="4500" data-y="-1000" data-scale="7">
-    </div>
+    <div id="overview" class="step" data-x="4500" data-y="-1000"
+    data-scale="7"></div>
   </div>
 
   <div class="hint">
