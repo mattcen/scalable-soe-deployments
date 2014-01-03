@@ -42,12 +42,13 @@
         "https://www.twitter.com/mattcen">@mattcen</a> on Twitter
         and elsewhere</li>
 
-        <li>Systems Administrator at <a href=
+        <li>Primary PrisonPC Engineer at <a href=
         "http://www.cyber.com.au">Cyber IT Solutions
-        (http://www.cyber.com.au)</a></li>
+        (http://www.cyber.com.au)</a><br>
+        <a href="http://www.prisonpc.com">PrisonPC
+        (http://www.prisonpc.com)</a>
+</li>
 
-        <li>Working on <a href="http://www.prisonpc.com">PrisonPC
-        (http://www.prisonpc.com)</a></li>
       </ul>
 
       <div class="notes">
@@ -60,27 +61,19 @@
       <h1>What is PrisonPC?</h1>
 
       <p>A system designed to allow prisoners limited and monitored
-      access PCs and the Internet.<br>
+      access to PCs and the Internet.<br>
       <br>
-      For the purposes of this presentation, the only importance of
-      PrisonPC is that it makes use of a system we call
-      Trimclient.<br></p>
+      For the purposes of this presentation, the only relevance of
+      PrisonPC is it is built on Trimclient, a solution to create
+      network-bootable OSes which run all apps on the local machine to
+      reduce server load and improve desktop application performance (by
+      taking advantage of commodity desktop hardware) and increased
+      security.</p> 
+      FIXME: BULLET POINTS
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 01:00</p>
-      </div>
-    </div>
-
-    <div class="step slide" data-x="2000" data-y="-1500">
-      <h1>What is Trimclient?</h1>
-
-      <p>A solution to create network-bootable OSes which run all
-      apps on the local machine to reduce server load.</p>
-
-      <div class="notes">
-        <p>SLIDE NOTES:<br>
-        Timing: 01:30</p>
       </div>
     </div>
 
@@ -102,7 +95,7 @@
 
         <li>SafeIC (safe internet computer)</li>
 
-        <li>TCA and Transmuste</li>
+        <li>TCA and Transmute</li>
 
         <li>TCA and bootstrap</li>
       </ul>
@@ -119,11 +112,15 @@
       <p>Any large-ish desktop deployment:</p>
 
       <ul>
-        <li>Prisons</li>
+        <li>Correctional Facilities (prisons etc.)</li>
 
         <li>Schools</li>
 
         <li>Offices</li>
+
+        <li>Call centres</li>
+
+        <li>Any centrally managed and distributed desktop environment</li>
       </ul>
 
       <div class="notes">
@@ -136,9 +133,7 @@
       <h1>How does network booting work?</h1>
 
       <ol>
-        <li>Desktop starts booting</li>
-
-        <li>BIOS tries to boot off network card's PXE
+        <li>BIOS attempts to boot off network card's PXE
         (Pre-installation Execution Environment) ROM</li>
 
         <li>PXE ROM requests DHCP</li>
@@ -196,6 +191,7 @@ pxelinux.cfg/default
     <div class="step slide" data-x="6000" data-y="-1500">
       <h1>Building SOEs</h1>
 
+      <h2>DELETEME? Or: Things to avoid</h2>
       <h2>Old method: Transmute</h2>
 
       <ul>
@@ -274,8 +270,8 @@ pxelinux.cfg/default
             <li>Images (SOEs): A list of SOEs available for
             booting</li>
 
-            <li>Realms: A group of PCs. E.g: "classroom 1",
-            "cells", and the SOE each group should boot</li>
+            <li>Realms: Logical groups of PCs (E.g: "classroom 1",
+            "cells") to which SOEs are assigned</li>
 
             <li>Hosts: Individual desktop PCs, with its MAC,
             IP/netmask, and realm</li>
@@ -283,18 +279,22 @@ pxelinux.cfg/default
         </li>
 
         <li>Allows for trivial grouping of hosts in realms and
-        immediate re-assignment of realms to new SOEs. Upgrades
+        immediate re-assignment of entire realms to new SOEs. Upgrades
         then only require a reboot of each desktop, and can be
         tested thoroughly beforehand.</li>
       </ul>
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 08:00</p>
+        Timing: 08:00<br>
+        Instant rollback of realm SOEs if necessary<br>
+        Realms can also be associated with timeslots (to correspond with
+        school periods for example): switching SOE during recess/lunch</p>
       </div>
     </div>
 
     <div class="step slide" data-x="9000" data-y="-1500">
+      Conclusion: Summary, primary benefits of Trimclient.
       <div class="notes">
         <p>Insert notes here</p>
       </div>
