@@ -1,0 +1,10 @@
+#!/bin/bash
+t=$(mktemp -d /tmp/tmpdir-XXXXXX)
+trap "rm -rf \"$t\"" 0 TERM INT QUIT
+cwd=$PWD
+
+mkdir "$t"/scalable-soe-deployments
+cp -Lr index.html js css "$t"/scalable-soe-deployments
+cd "$t" &&
+tar czf "$cwd"/scalable-soe-deployments.tar.gz scalable-soe-deployments
+cd "$cwd"
