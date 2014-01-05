@@ -52,62 +52,38 @@
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 00:30</p>
+        Timing: 00:30<br>
+        <ul>
+        <li>Matthew Cengia, from Cyber IT Solutions (Melbourne), where
+        I'm one of their primary PrisonPC engineers.</li>
+        <li>Here to talk about building Scalable SOE Deployments</li>
+        </ul></p>
       </div>
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
       <h1>What is PrisonPC?</h1>
 
-      <p>A system designed to allow inmates limited and monitored
+      <p>A server appliance designed to allow inmates limited and monitored
       access to PCs and the Internet.<br>
       <br>
-      For the purposes of this presentation, the only relevance of
-      PrisonPC is that it is built on Trimclient, a solution to create
-      network-bootable OSes which run all apps on the local machine to:
+      Only relevance of PrisonPC to presentation is that it is built on
+      Trimclient (similar to thin client), a solution to build
+      network-bootable SOEs which run all apps on the local machine to:
       <ul>
         <li>Reduce server load</li>
         <li>Improve desktop application performance (by taking advantage
         of commodity desktop hardware)</li>
-        <li>Increased security</p>
+        <li>Increase security</p>
       </ul>
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 01:00</p>
+        Timing: 01:30<br>
+        </p>
       </div>
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
-      <h1>Trimclient history</h1>
-
-      <ul>
-        <li>Knoppix live boot CD
-        <ul>
-          <li>Live environment</li>
-
-          <li>Read-only root file-system</li>
-
-          <li>Union with COW</li>
-        </ul>
-        </li>
-
-        <li>SafeIC (Safe Internet Computer)</li>
-
-        <li>TCA and Transmute</li>
-
-        <li>TCA and bootstrap</li>
-      </ul>
-
-      <div class="notes">
-        <p>SLIDE NOTES:<br>
-        Timing: 02:00<br>
-        <br>
-        SafeIC: Customized Live CD, built off Knoppix I think, and
-        similar to Tails.</p>
-      </div>
-    </div>
-
-    <div class="step slide" data-x="3000" data-y="-1500">
       <h1>Trimclient use-cases</h1>
 
       <p>Any medium-to-large desktop deployment:</p>
@@ -121,19 +97,20 @@
 
         <li>Call centres</li>
 
-        <li>Any centrally managed and distributed desktop environment</li>
+        <li>Any centrally managed and distributed desktop
+        environment</li>
       </ul>
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 02:15<br>
+        Timing: 03:30<br>
         <br>
         Homogeneous environments with large groups of PCs with similar
         or identical configurations</p>
       </div>
     </div>
 
-    <div class="step slide" data-x="4000" data-y="-1500">
+    <div class="step slide" data-x="3000" data-y="-1500">
       <h1>How does network booting work?</h1>
 
       <ol>
@@ -150,11 +127,12 @@
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 3:00</p>
+        Timing: 4:30</p>
+        <h3>Possibly skip this slide</h3>
       </div>
     </div>
 
-    <div class="step slide" data-x="4000" data-y="-700">
+    <div class="step slide" data-x="3000" data-y="-700">
       <h1>How does network booting work?</h1>
 
       <ol>
@@ -184,18 +162,19 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 3:30</p>pxelinux.0 attempts to retrieve boot config
-        file based on this desktop's MAC address, followed by
-        individual nibbles (4 bits, or 1 hex digit) of its IP
-        address, starting with the whole IP, then repeatedly
-        stripping nibbles off the end
+        Timing: 5:30</p>
+        <h3>Possibly skip this slide</h3>
+        <p>pxelinux.0 attempts to retrieve boot config
+        file based on this desktop's GUID, MAC address, and then
+        its IP, split into individual nibbles (4 bits, or 1 hex digit),
+        and repeatedly stripped off until a matching file is found.
+        </p>
       </div>
     </div>
 
-    <div class="step slide" data-x="5000" data-y="-1500">
+    <div class="step slide" data-x="4000" data-y="-1500">
       <h1>Building SOEs</h1>
 
-      <h2>DELETEME? Or: Things to avoid</h2>
       <h2>Old method: Transmute</h2>
 
       <ul>
@@ -213,14 +192,15 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 04:00</p>
+        Timing: 06:30</p>
+        <h3>Skip this slide</h3>
       </div>
     </div>
 
-    <div class="step slide" data-x="5000" data-y="-700">
+    <div class="step slide" data-x="4000" data-y="-700">
       <h1>Building SOEs</h1>
 
-      <h2>New method: Bootstrap</h2>
+      <h2>Curent method: Bootstrap</h2>
 
       <ul>
         <li>Relatively short Bash script</li>
@@ -235,14 +215,12 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 04:30</p>
+        Timing: 08:00</p>
       </div>
     </div>
 
-    <div class="step slide" data-x="6000" data-y="-1500">
+    <div class="step slide" data-x="5000" data-y="-1500">
       <h1>What does live-boot do?</h1>
-
-      <p>(in a nutshell)</p>
 
       <ul>
         <li>Find and mount root file-system, in our case exposed as
@@ -258,11 +236,11 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 06:00</p>
+        Timing: 9:00</p>
       </div>
     </div>
 
-    <div class="step slide" data-x="7000" data-y="-1500">
+    <div class="step slide" data-x="6000" data-y="-1500">
       <h1>Trimclient Admin (TCA)</h1>
 
       <ul>
@@ -290,22 +268,33 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 08:00<br>
+        Timing: 10:00<br>
         Instant rollback of realm SOEs if necessary<br>
         Realms can also be associated with timeslots (to correspond with
         school periods for example): switching SOE during recess/lunch</p>
       </div>
     </div>
 
-    <div class="step slide" data-x="8000" data-y="-1500">
-      Conclusion: Summary, primary benefits of Trimclient.
+    <div class="step slide" data-x="7000" data-y="-1500">
+      <h1>Conclusion</h1>
+      <ul>
+        <li>Matthew Cengia &lt;mattcen@gmail.com&gt;, <a href=
+        "https://www.twitter.com/mattcen">@mattcen</a> on Twitter
+        and elsewhere</li>
+        <li>Medium-to-large desktop deployments</li>
+        <li>Live netboot SOE (built with bootstrap and live-boot)</li>
+        <li>Hosts grouped into realms</li>
+        <li>Realms each assigned an SOE</li>
+        <li>SOEs can be reconfigured instantly, applied on desktop
+        reboot</li>
       <div class="notes">
-        <p>Insert notes here</p>
+        <p>SLIDE NOTES:<br>
+        Timing: 11:00</p>
       </div>
     </div>
 
-    <div id="overview" class="step" data-x="4000" data-y="-1000"
-    data-scale="6.5"></div>
+    <div id="overview" class="step" data-x="3500" data-y="-1000"
+    data-scale="6"></div>
   </div>
 
   <div class="hint">
