@@ -45,42 +45,46 @@
         <li>Primary <a href="http://www.prisonpc.com">PrisonPC
         (http://www.prisonpc.com)</a> Engineer at <a href=
         "http://www.cyber.com.au">Cyber IT Solutions
-        (http://www.cyber.com.au)</a><br>
-        </li>
-
+        (http://www.cyber.com.au)</a><br></li>
       </ul>
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 00:30<br>
+        Timing: 00:30<br></p>
+
         <ul>
-        <li>Matthew Cengia, from Cyber IT Solutions (Melbourne), where
-        I'm one of their primary PrisonPC engineers.</li>
-        <li>Here to talk about building Scalable SOE Deployments</li>
-        </ul></p>
+          <li>Matthew Cengia, from Cyber IT Solutions (Melbourne),
+          where I'm one of their primary PrisonPC engineers.</li>
+
+          <li>Here to talk about building Scalable SOE
+          Deployments</li>
+        </ul>
       </div>
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
       <h1>What is PrisonPC?</h1>
 
-      <p>A server appliance designed to allow inmates limited and monitored
-      access to PCs and the Internet.<br>
+      <p>A server appliance designed to allow inmates limited and
+      monitored access to PCs and the Internet.<br>
       <br>
-      PrisonPC's only relevance here is that it is built on Trimclient
-      (similar to thin client).<br>
-      Trimclient is  a solution to build network-bootable
-      SOEs which run all apps on the <strong>local desktop</strong> to:
+      PrisonPC's only relevance here is that it is built on
+      Trimclient (similar to thin client).<br>
+      Trimclient is a solution to build network-bootable SOEs which
+      run all apps on the <strong>local desktop</strong> to:</p>
+
       <ul>
         <li>Reduce server load</li>
-        <li>Improve desktop application performance (by taking advantage
-        of commodity desktop hardware)</li>
-        <li>Increase security</p>
+
+        <li>Improve desktop application performance (by taking
+        advantage of commodity desktop hardware)</li>
+
+        <li>Increase security</li>
       </ul>
+
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 01:30<br>
-        </p>
+        Timing: 01:30<br></p>
       </div>
     </div>
 
@@ -106,8 +110,8 @@
         <p>SLIDE NOTES:<br>
         Timing: 03:30<br>
         <br>
-        Homogeneous environments with large groups of PCs with similar
-        or identical configurations</p>
+        Homogeneous environments with large groups of PCs with
+        similar or identical configurations</p>
       </div>
     </div>
 
@@ -129,6 +133,7 @@
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 4:30</p>
+
         <h3>Possibly skip this slide</h3>
       </div>
     </div>
@@ -164,12 +169,13 @@ pxelinux.cfg/default
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 5:30</p>
+
         <h3>Possibly skip this slide</h3>
-        <p>pxelinux.0 attempts to retrieve boot config
-        file based on this desktop's GUID, MAC address, and then
-        its IP, split into individual nibbles (4 bits, or 1 hex digit),
-        and repeatedly stripped off until a matching file is found.
-        </p>
+
+        <p>pxelinux.0 attempts to retrieve boot config file based
+        on this desktop's GUID, MAC address, and then its IP, split
+        into individual nibbles (4 bits, or 1 hex digit), and
+        repeatedly stripped off until a matching file is found.</p>
       </div>
     </div>
 
@@ -192,8 +198,8 @@ pxelinux.cfg/default
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 08:00<br>
-        Trimclient has been through several iterations. This is current
-        state.</p>
+        Trimclient has been through several iterations. This is
+        current state.</p>
       </div>
     </div>
 
@@ -214,9 +220,9 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 9:00
+        Timing: 9:00</p>
+
         <h3>Possibly skip this slide</h3>
-        </p>
       </div>
     </div>
 
@@ -241,38 +247,51 @@ pxelinux.cfg/default
         </li>
 
         <li>Allows for trivial grouping of hosts in realms and
-        immediate re-assignment of entire realms to new SOEs. Upgrades
-        then only require a reboot of each desktop, and can be
-        tested thoroughly beforehand.</li>
+        immediate re-assignment of entire realms to new SOEs.
+        Upgrades then only require a reboot of each desktop, and
+        can be tested thoroughly beforehand.</li>
       </ul>
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 10:00<br>
         Instant rollback of realm SOEs if necessary<br>
-        Realms can also be associated with timeslots (to correspond with
-        school periods for example): switching SOE during recess/lunch</p>
+        Realms can also be associated with timeslots (to correspond
+        with school periods for example): switching SOE during
+        recess/lunch</p>
       </div>
     </div>
 
     <div class="step slide" data-x="7000" data-y="-1500">
       <h1>Conclusion</h1>
+
       <ul>
         <li>Matthew Cengia &lt;mattcen@gmail.com&gt;, <a href=
         "https://www.twitter.com/mattcen">@mattcen</a> on Twitter
         and elsewhere</li>
+
         <li>Medium-to-large desktop deployments</li>
-        <li>Live netboot SOE (built with bootstrap and live-boot)</li>
+
+        <li>Live netboot SOE (built with bootstrap and
+        live-boot)</li>
+
         <li>Hosts grouped into realms</li>
+
         <li>Realms each assigned an SOE</li>
+
         <li>SOEs can be reconfigured instantly, applied on desktop
         reboot</li>
-        <br>
-        Questions?
-      <div class="notes">
-        <p>SLIDE NOTES:<br>
-        Timing: 11:00</p>
-      </div>
+
+        <li style="list-style: none">
+          <br>
+          Questions?
+
+          <div class="notes">
+            <p>SLIDE NOTES:<br>
+            Timing: 11:00</p>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <div id="overview" class="step" data-x="3500" data-y="-1000"
