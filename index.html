@@ -67,9 +67,10 @@
       <p>A server appliance designed to allow inmates limited and monitored
       access to PCs and the Internet.<br>
       <br>
-      Only relevance of PrisonPC to presentation is that it is built on
-      Trimclient (similar to thin client), a solution to build
-      network-bootable SOEs which run all apps on the local machine to:
+      PrisonPC's only relevance here is that it is built on Trimclient
+      (similar to thin client).<br>
+      Trimclient is  a solution to build network-bootable
+      SOEs which run all apps on the <strong>local desktop</strong> to:
       <ul>
         <li>Reduce server load</li>
         <li>Improve desktop application performance (by taking advantage
@@ -175,32 +176,7 @@ pxelinux.cfg/default
     <div class="step slide" data-x="4000" data-y="-1500">
       <h1>Building SOEs</h1>
 
-      <h2>Old method: Transmute</h2>
-
-      <ul>
-        <li>Nasty scheme shell scripts</li>
-
-        <li>Used Ubuntu 10.04 Live Desktop ISO</li>
-
-        <li>Uninstalled basically everything</li>
-
-        <li>Installed just what we wanted and performed scripted
-        configuration</li>
-
-        <li>Booted via Casper (Ubuntu's live boot solution)</li>
-      </ul>
-
-      <div class="notes">
-        <p>SLIDE NOTES:<br>
-        Timing: 06:30</p>
-        <h3>Skip this slide</h3>
-      </div>
-    </div>
-
-    <div class="step slide" data-x="4000" data-y="-700">
-      <h1>Building SOEs</h1>
-
-      <h2>Curent method: Bootstrap</h2>
+      <h2>Bootstrap</h2>
 
       <ul>
         <li>Relatively short Bash script</li>
@@ -215,7 +191,9 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 08:00</p>
+        Timing: 08:00<br>
+        Trimclient has been through several iterations. This is current
+        state.</p>
       </div>
     </div>
 
@@ -236,7 +214,9 @@ pxelinux.cfg/default
 
       <div class="notes">
         <p>SLIDE NOTES:<br>
-        Timing: 9:00</p>
+        Timing: 9:00
+        <h3>Possibly skip this slide</h3>
+        </p>
       </div>
     </div>
 
@@ -287,6 +267,8 @@ pxelinux.cfg/default
         <li>Realms each assigned an SOE</li>
         <li>SOEs can be reconfigured instantly, applied on desktop
         reboot</li>
+        <br>
+        Questions?
       <div class="notes">
         <p>SLIDE NOTES:<br>
         Timing: 11:00</p>
